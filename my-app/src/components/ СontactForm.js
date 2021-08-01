@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import style from '../styles/ContactForm..module.css'
 
 export default function ContactForm ({AddContact}) {
-    const [name, setName] = useState('name', '');
-    const [number, setNumber] = useState('number', '');
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
     
 const handleChange =(e) => {
     const {name,value} = e.target;
@@ -44,10 +44,10 @@ const handleSubmit = (e) => {
                 Number
                 <input
                     className={style.input}
-                    type="text"
-                    name="number"
-                    value={number}
-                    onChange={handleChange}
+                     type="tel"
+                     name="number"
+                     value={number}
+                     onChange={handleChange}
                 />
             </label>
             <button className={style.button} type="submit">

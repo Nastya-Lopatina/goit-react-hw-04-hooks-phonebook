@@ -11,7 +11,7 @@ const useLocalStorage = (key, defaultValue, serialize = JSON.stringify, deserial
 
   useEffect(() => {
     window.localStorage.setItem(key, serialize(state));
-  }, [key, state]);
+  }, [key, state, serialize]);
 
   return [state, setState]
 
@@ -51,6 +51,7 @@ return contacts.filter((contacts)=> contacts.name.toLowerCase().includes(filter.
 
 const deleteContact = (contactId) =>{
   setContacts(contacts.filter(contact => contact.id !== contactId))
+
 };
 
 
